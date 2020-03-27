@@ -1,0 +1,29 @@
+{
+  "name": "discord-bot-updater",
+  "version": "1.0.5",
+  "description": "Communicates to github to download a bot's source code.",
+  "main": "main.js",
+  "keywords": [
+    "Discord",
+    "Updater",
+    "Github"
+  ],
+  "author": "xTeal",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "adm-zip": "^0.4.14",
+    "node-merge-fix": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoNoTeal/discord-bot-updater.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NoNoTeal/discord-bot-updater/issues"
+  },
+  "homepage": "https://github.com/NoNoTeal/discord-bot-updater#readme"
+}
