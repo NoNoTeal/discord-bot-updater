@@ -46,3 +46,8 @@ Fixes filter bug
 
 Connect repo to Github.
 Export version-check as well
+
+### 1.0.6
+
+Implement a feature from node-merge-fix so when you overwrite a folder, files can be deleted.
+Add some touchups to exported functions.

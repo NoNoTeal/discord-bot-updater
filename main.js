@@ -13,6 +13,7 @@ var nodemerge = require('node-merge-fix')
  * @param {number} posFromLatest Updates to a version that is not a prerelease or a latest release, overrides {@link doPrereleases}
  * @param {Array} filter Ignore filenames. The bot will replace botconfig.json if NOT specified.
  * @author xTeal
+ * @returns {string}
  */
 module.exports.downloadRelease = async function (username, reponame, doPrereleases = true, doOverwrite = true, posFromLatest = 0, filter = []) {
     var __results = []
@@ -89,7 +90,7 @@ module.exports.downloadRelease = async function (username, reponame, doPrereleas
                 return __results.push(`Version of package you are downloading is below ${PKG.version}.`);
             } else 
             desync(filter)
-            await nodemerge.mergeTo(`./releases/${reponame}-${releases[num].tag_name}`, "./", {overwrite: doOverwrite, silent: true})
+            await nodemerge.mergeTo(`./releases/${reponame}-${releases[num].tag_name}`, "./", {overwrite: doOverwrite, silent: true, deleteFiles: true})
             fs.unlinkSync(`./bot.zip`)
             removeDir('./releases')
             return __results.push('Finished.')
@@ -101,6 +102,7 @@ module.exports.downloadRelease = async function (username, reponame, doPrereleas
  * @param {string} githubver The package downloaded from Github
  * @param {string} packver This package version
  * @private
+ * @returns {boolean}
  */
 module.exports.checkVersion = async function (githubver, packver) {
     var one = githubver.split('.')
